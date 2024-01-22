@@ -3,6 +3,7 @@ package telephone;
 import java.util.Scanner;
 
 // Контакт: имя, номер телефона
+//@formatter:on
 public class Contact {
     public String name;
     public String value;

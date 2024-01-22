@@ -3,6 +3,7 @@ package telephone;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+//@formatter:on
 public class Main {
     // телефонная книга tBook реализована как список (динамический массив)
     static ArrayList<Contact> tBook = new ArrayList<>(10);
