@@ -1,4 +1,5 @@
 package telephone;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -41,22 +42,20 @@ public class Main {
                     // выбрать контакт по его индексу в массиве и затем ввести новое имя и номер.
                     if (!tBook.isEmpty()) {
                         tBookPrint();
+                        System.out.println("Какой контакт будем редактировать?:");
+                        int indContact;
+                        indContact = sc.nextInt();
+
+                        while ((indContact <= 0) || (indContact > tBook.size())) {
+                            System.out.println("Некорректное значение индекса. \n" + "Введите значение в диапазоне от 1 до " + tBook.size());
                             System.out.println("Какой контакт будем редактировать?:");
-                            int indContact;
                             indContact = sc.nextInt();
-
-                            while ((indContact<=0)||(indContact>tBook.size())) {
-                                System.out.println("Некорректное значение индекса. \n" + "Введите значение в диапазоне от 1 до " + tBook.size());
-                                System.out.println("Какой контакт будем редактировать?:");
-                                indContact = sc.nextInt();
-                            }
-                            Contact contactNew = new Contact();
-                            contactNew.input();
-                            tBook.set(indContact - 1, contactNew);
-                            tBookPrint();
-                            }
-
-                    else tBookPrint();
+                        }
+                        Contact contactNew = new Contact();
+                        contactNew.input();
+                        tBook.set(indContact - 1, contactNew);
+                        tBookPrint();
+                    } else tBookPrint();
 
 
                     break;
@@ -64,12 +63,12 @@ public class Main {
                     // При выборе команды Удалить контакт пользователю предлагается выбрать
                     // контакт по его индексу в массиве для удаления.
                     if (!tBook.isEmpty()) {
-                       tBookPrint();
+                        tBookPrint();
 
                         System.out.println("Какой контакт будем удалять?:");
                         int indContact;
                         indContact = sc.nextInt();
-                        while ((indContact<=0)||(indContact>tBook.size())) {
+                        while ((indContact <= 0) || (indContact > tBook.size())) {
                             System.out.println("Некорректное значение индекса. \n" + "Введите значение в диапазоне от 1 до " + tBook.size());
                             System.out.println("Какой контакт будем удалять?:");
                             indContact = sc.nextInt();
@@ -83,12 +82,12 @@ public class Main {
                     break;
                 case 4:
                     // Программа не завершается, пока пользователь не выберет пункт «Выйти».
-                                    {
+                {
                     System.out.println("Выходим");
                     tBookPrint();
-                    }
+                }
 
-                    break;
+                break;
                 default:
                     // Введен несуществующий пункт меню, повторный ввод
                     System.out.println("Введен несуществующий пункт меню. Введите 1, 2, 3 или 4");
@@ -98,17 +97,19 @@ public class Main {
         while (menu != 4);
         sc.close();
     }
+
     // вывод в консоль динамического списка телефонная книга tBook
     public static void tBookPrint() {
         System.out.println("Телефонная книга:");
         // если уже есть контакты в телефонной книге, то выводим их на экран в формате
         // index. name  value
         if (!tBook.isEmpty()) {
-        int index=1;
-        for (Contact cont : tBook) {
-        System.out.print(index+". ");
-        cont.print();
-        index++; }
+            int index = 1;
+            for (Contact cont : tBook) {
+                System.out.print(index + ". ");
+                cont.print();
+                index++;
+            }
         }
         // Если не вводились контакты, телефонная книга пустая
         else System.out.println("ПАМЯТЬ ТЕЛЕФОНА ПУСТА");

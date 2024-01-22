@@ -1,4 +1,5 @@
 package telephone;
+
 import java.util.Scanner;
 
 // Контакт: имя, номер телефона
@@ -7,12 +8,12 @@ public class Contact {
     public String value;
 
     // вывод в консоль объекта Contact
-    public void print () {
-        System.out.println(name + " тел. "+ value);
+    public void print() {
+        System.out.println(name + " тел. " + value);
     }
 
     // ввод информации в объект Contact
-    public void input () {
+    public void input() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя: ");
         this.name = sc.nextLine();
