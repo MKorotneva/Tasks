@@ -16,8 +16,7 @@ public class Main {
 
         System.out.println("Сумма чисел равна: "+ (num1+num2));
 
-        int diff=0;
-        diff = Math.abs((num1-num2));
+        int diff = Math.abs((num1-num2));
         System.out.println("Разница между "+num1+ " и "+num2+" равна "+ diff);
 
         System.out.println("Ряд чисел от минимального из этих чисел до максимального:");
