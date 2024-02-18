@@ -39,7 +39,8 @@ public class Main {
                 for (int i = num1; i <= num2; i++) {
                     System.out.print(i + " ");
                 }
-            } else {
+            }
+            else {
                 for (int i = num2; i <= num1; i++) {
                     System.out.print(i + " ");
                 }
@@ -51,13 +52,13 @@ public class Main {
 // на входе строка, проверяется на наличие разделителя ","
 // строка разбивается на части по разделителю ","
 // первая часть строки преобразуется в целое число int
-public static int stringToInt(String str, int n) {
-    String [] parts=str.split(",");
-    if (!(str.indexOf(",")==-1)) {
-        n=Integer.parseInt(parts[0]);
-        System.out.println("Отбрасываем дробную часть числа. Целое число: "+n);
+    public static int stringToInt(String str, int n) {
+        String [] parts=str.split(",");
+        if (!(str.indexOf(",")==-1)) {
+            n=Integer.parseInt(parts[0]);
+            System.out.println("Отбрасываем дробную часть числа. Целое число: "+n);
+        }
+        else n=Integer.parseInt(str);
+        return n;
     }
-    else n=Integer.parseInt(str);
-    return n;
-}
 }
